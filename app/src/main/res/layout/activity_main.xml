@@ -18,11 +18,23 @@
         tools:layout_editor_absoluteX="7dp"
         tools:layout_editor_absoluteY="7dp" />
 
+    <Button
+        android:id="@+id/btnTokenize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnUpload"
+        android:layout_marginBottom="-102dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Tokenize File"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="7dp" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="491dp"
         android:layout_below="@+id/btnUpload"
-        android:layout_marginTop="-3dp">
+        android:layout_marginTop="59dp">
 
 
         <TextView
