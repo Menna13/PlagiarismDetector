@@ -6,7 +6,7 @@ resources with the text in the document. The app utilizes [Google Custom Search 
 
 ## Features 
 
-The following **required** functionality is completed:
+The following functionalities are completed:
 
 - [X] User can **Browse document from their internal, sdcard, or cloud storage**
 - [X]	User can **view extracted text from the document**
