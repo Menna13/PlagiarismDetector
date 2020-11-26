@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-//    id 'com.chaquo.python'
 }
 
 android {
@@ -8,17 +7,6 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-//        python{
-//            staticProxy "parse"
-//            pip{
-//                install "scipy"
-//                install "numpy"
-//                install "gensim"
-//            }
-//        }
-//        ndk{
-//            abiFilters "armeabi-v7a", "x86"
-//        }
         applicationId "com.example.plagiarismdetector"
         minSdkVersion 21
         targetSdkVersion 30

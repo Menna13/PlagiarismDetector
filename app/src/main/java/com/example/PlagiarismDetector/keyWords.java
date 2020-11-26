@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.github.barteksc.pdfviewer.PDFView;
-
 public class keyWords extends AppCompatActivity {
     EditText etKeywords;
     Button btnSubmit;
@@ -17,13 +15,16 @@ public class keyWords extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_key_words);
+        //declaring layout components
         etKeywords = findViewById(R.id.etKeywords);
         btnSubmit = findViewById(R.id.btSubmit);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//              retrieve user input keywords from the text book
                 String text = etKeywords.getText().toString();
                 Intent data = new Intent();
+                //pass the keywords text as data to the Main activity
                 data.putExtra("keyword", text);
                 setResult(RESULT_OK, data);
                 finish();

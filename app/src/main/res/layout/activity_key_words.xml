@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="480dp"
         android:fontFamily="sans-serif-condensed-light"
-        android:text="Input Key Words here and seperate by comma:"
+        android:text="Input Key Words here and separate by comma:"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/etKeywords"
         app:layout_constraintEnd_toEndOf="@+id/etKeywords"
