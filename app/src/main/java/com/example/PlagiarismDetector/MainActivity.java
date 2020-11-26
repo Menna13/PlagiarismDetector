@@ -146,11 +146,10 @@ public class MainActivity extends AppCompatActivity {
                             search(keywordsArray);
                         }
                     });
-
             }
-
         }
     }
+
     /*
     readTextFromUri take a file Uri path and opens it to read text
     it displays the extracted text to a TextView and enables button that allows user to tokenize document
@@ -246,39 +245,39 @@ public class MainActivity extends AppCompatActivity {
             // show mProgressBar
             mProgressBar.setVisibility(View.VISIBLE);
         }
-            URL url = urls[0];
-            // Http connection
-            HttpURLConnection conn = null;
-            try {
-                conn = (HttpURLConnection) url.openConnection();
-            } catch (IOException e) {
-                Log.e(TAG, "Http connection ERROR " + e.toString());
+        URL url = urls[0];
+        // Http connection
+        HttpURLConnection conn = null;
+        try {
+            conn = (HttpURLConnection) url.openConnection();
+        } catch (IOException e) {
+            Log.e(TAG, "Http connection ERROR " + e.toString());
+        }
+        try {
+            responseCode = conn.getResponseCode();
+            responseMessage = conn.getResponseMessage();
+        } catch (IOException e) {
+            Log.e(TAG, "Http getting response code ERROR " + e.toString());
+
+        }
+        if (responseCode != null && responseCode == 200) {
+
+            // response OK
+            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            StringBuilder sb = new StringBuilder();
+            String line;
+
+            while ((line = rd.readLine()) != null) {
+                sb.append(line + "\n");
             }
-            try {
-                responseCode = conn.getResponseCode();
-                responseMessage = conn.getResponseMessage();
-            } catch (IOException e) {
-                Log.e(TAG, "Http getting response code ERROR " + e.toString());
+            rd.close();
 
-            }
-                if (responseCode != null && responseCode == 200) {
+            conn.disconnect();
 
-                    // response OK
-                    BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                    StringBuilder sb = new StringBuilder();
-                    String line;
-
-                    while ((line = rd.readLine()) != null) {
-                        sb.append(line + "\n");
-                    }
-                    rd.close();
-
-                    conn.disconnect();
-
-                    result = sb.toString();
-            }
+            result = sb.toString();
         }
     }
+}
 
 
 
